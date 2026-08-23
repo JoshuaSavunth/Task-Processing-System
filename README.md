@@ -6,14 +6,14 @@ The project was built to explore how multiple workers can safely share a job que
 
 ## Features
 
-* FastAPI REST API for submitting jobs and checking their status
-* SQL database used as a persistent job queue
-* Multiple workers running at the same time
-* Atomic job claiming to avoid duplicate processing
+* REST API to submit jobs and check status
+* SQL database as the job queue
+* Multiple workers run in parallel
+* Atomic job claiming—no duplicate processing
 * Job status and result tracking
-* Worker heartbeats
-* Retry handling for failed or stalled jobs
-* Command-line client
+* Worker heartbeats for failure detection
+* Retry logic for failed or stalled jobs
+* Command-line client included
 * Unit and integration tests
 
 ## How It Works
@@ -198,26 +198,19 @@ pytest
 
 ## Limitations
 
-This is a learning project and is not intended to replace production task queue systems.
-
-Some current limitations are:
-
-* SQL is used directly as the job queue
-* Basic retry handling
-* Limited monitoring/logging
-* No authentication for the API
-* No web interface for monitoring jobs
-* Limited handling of very large workloads
+Limitations include:
+- SQL is used as the job queue
+- Retry handling is basic
+- Logging/monitoring is minimal
+- No authentication or web dashboard
+- Not tested at large scale
 
 ## Possible Improvements
 
 Some areas I would like to explore further include:
 
-* Using Redis or RabbitMQ as a message broker
 * Adding task priorities and cancellation
-* Improving retry/backoff handling
 * Adding better logging and monitoring
-* Containerizing the application with Docker
 * Adding a simple web dashboard
 
 ## Technologies
@@ -227,4 +220,3 @@ Some areas I would like to explore further include:
 * SQL
 * Pytest
 * REST APIs
-* Git
