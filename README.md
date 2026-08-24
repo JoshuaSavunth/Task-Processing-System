@@ -76,11 +76,11 @@ Apply the database schema:
 psql -U postgres -d distributed_tasks -f sql/schema.sql
 ```
 
-> **Note:** When prompted for the PostgreSQL password, enter `postgres`.
+> **Note:** When prompted for the PostgreSQL password, enter: postgres.
 
 ### Terminal 1 — Start the API
 
-Start the FastAPI server and **keep this terminal running**:
+Start the FastAPI server and keep this terminal running:
 
 ```bash
 uvicorn app.main:app --reload
@@ -100,7 +100,7 @@ http://127.0.0.1:8000/docs
 
 ### Terminal 2 — Start a Worker
 
-Open a **second terminal**, start the worker, and **keep this terminal running**:
+Open a second terminal, start the worker, and keep this terminal running:
 
 ```bash
 python worker.py
@@ -108,7 +108,7 @@ python worker.py
 
 ### Terminal 3 — Run Client Commands
 
-Open a **third terminal** to interact with the system.
+Open a third terminal to interact with the system.
 
 #### Register a User
 
