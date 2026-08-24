@@ -43,7 +43,7 @@ Worker 1          Worker 2
       Update Job
 ```
 
-A typical job starts as `pending`. A worker claims the job and changes it to `running` before executing it. Once finished, the worker stores the result and marks the job as `completed` or `failed`.
+A typical job starts as "pending". A worker claims the job and changes it to "running" before executing it. Once finished, the worker stores the result and marks the job as "completed" or "failed".
 
 If a worker stops responding, its heartbeat can become stale and the job can be made available for another attempt.
 
