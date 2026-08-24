@@ -9,7 +9,7 @@ The project was built to explore how multiple workers can safely share a job que
 * REST API to submit jobs and check status
 * SQL database as the job queue
 * Multiple workers run in parallel
-* Atomic job claiming—no duplicate processing
+* Atomic job claiming - no duplicate processing
 * Job status and result tracking
 * Worker heartbeats for failure detection
 * Retry logic for failed or stalled jobs
