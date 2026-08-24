@@ -92,12 +92,6 @@ The API will run at:
 http://127.0.0.1:8000
 ```
 
-FastAPI's API documentation is available at:
-
-```text
-http://127.0.0.1:8000/docs
-```
-
 ### Terminal 2 — Start a Worker
 
 Open a second terminal, start the worker, and keep this terminal running:
