@@ -112,7 +112,7 @@ python client.py register <username> <password>
 
 #### Submit a Job
 
-Example: submit a fibonacci job:
+Example for submitting a fibonacci job:
 
 ```bash
 python client.py submit fibonacci 10
