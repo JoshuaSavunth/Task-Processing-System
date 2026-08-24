@@ -60,7 +60,9 @@ distributed-task-system/
 └── README.md
 ```
 
-## Setup
+## How to Run
+
+### Setup
 
 Install the required packages:
 
@@ -68,10 +70,20 @@ Install the required packages:
 pip install -r requirements.txt
 ```
 
-Start the API:
+Apply the database schema:
 
 ```bash
-uvicorn api.main:app --reload
+psql -U postgres -d distributed_tasks -f sql/schema.sql
+```
+
+> **Note:** When prompted for the PostgreSQL password, enter `postgres`.
+
+### Terminal 1 — Start the API
+
+Start the FastAPI server and **keep this terminal running**:
+
+```bash
+uvicorn app.main:app --reload
 ```
 
 The API will run at:
@@ -80,44 +92,75 @@ The API will run at:
 http://127.0.0.1:8000
 ```
 
-FastAPI's API documentation can also be viewed at `/docs`.
+FastAPI's API documentation is available at:
 
-In another terminal, start a worker:
+```text
+http://127.0.0.1:8000/docs
+```
+
+### Terminal 2 — Start a Worker
+
+Open a **second terminal**, start the worker, and **keep this terminal running**:
 
 ```bash
 python worker.py
 ```
 
-More workers can be started in additional terminals to test concurrent processing.
+### Terminal 3 — Run Client Commands
 
-## Using the Client
+Open a **third terminal** to interact with the system.
 
-Submit a job:
+#### Register a User
 
 ```bash
-python client.py submit prime_factorization 123456
+python client.py register <username> <password>
+```
+
+#### Submit a Job
+
+Submit a Fibonacci job:
+
+```bash
+python client.py submit fibonacci 10
 ```
 
 Example response:
 
 ```text
 Job submitted successfully.
-Job ID: 42
+Job ID: 1
 ```
 
-Check the job:
+#### Check Results
 
 ```bash
-python client.py status 42
+python client.py result 1
 ```
 
-Example:
+Example response:
 
 ```text
-Job ID: 42
+Job ID: 1
 Status: completed
-Result: [2, 2, 2, 2, 2, 2, 3, 643]
+Result: 55
 ```
+
+#### List All Jobs
+
+```bash
+python client.py jobs
+```
+
+#### Delete a Job
+
+```bash
+python client.py delete <job_id>
+```
+
+**Optional:** Run additional workers in separate terminals for parallel processing.
+
+> **Tip:** The API and worker terminals need to stay running while you use the client. Use a third terminal (or additional terminal tabs) for client commands.
+
 
 ## Job Queue
 
