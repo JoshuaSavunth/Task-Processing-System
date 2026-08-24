@@ -215,9 +215,9 @@ Failed jobs can also be retried depending on the configured retry limit.
 
 The project currently includes different example tasks such as:
 
-* **Prime factorization** — finds the prime factors of a number
-* **Fibonacci** — calculates a Fibonacci value
-* **Sleep/delay** — waits for a specified amount of time
+* **Prime factorization** - finds the prime factors of a number
+* **Fibonacci** - calculates a Fibonacci value
+* **Sleep/delay** - waits for a specified amount of time
 
 The delay task is useful when testing multiple workers and the heartbeat/retry system.
 
