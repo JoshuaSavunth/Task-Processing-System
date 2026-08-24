@@ -159,7 +159,7 @@ python client.py delete <job_id>
 
 **Optional:** Run additional workers in separate terminals for parallel processing.
 
-> **Tip:** The API and worker terminals need to stay running while you use the client. Use a third terminal (or additional terminal tabs) for client commands.
+**Tip:** The API and worker terminals need to stay running while you use the client, so use an additional terminal tab for client commands.
 
 
 ## Job Queue
