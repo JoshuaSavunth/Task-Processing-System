@@ -213,7 +213,7 @@ Failed jobs can also be retried depending on the configured retry limit.
 
 ## Tasks
 
-The project currently includes several example tasks:
+The project currently includes different example tasks such as:
 
 * **Prime factorization** — finds the prime factors of a number
 * **Fibonacci** — calculates a Fibonacci value
